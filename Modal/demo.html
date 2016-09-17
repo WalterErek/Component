@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal</title>
+  <link rel="stylesheet" href="modal.css">
+  <style>
+  body{
+    background-color: #aaa;
+  }
+  .u-trigger{
+    display: block;
+    width: 120px;
+    height: 32px;
+    font-size: 16px;
+    margin: 60px auto;
+  }
+  </style>
+</head>
+<body>
+
+
+ 
+<!-- <div class="m-modal">
+  <div class="modal_wrap">
+    <div class="modal_head">标题</div>
+    <div class="modal_body">内容</div>
+    <div class="modal_foot">
+      <a class='confirm' href='#'>确认</a>
+      <a class='cancel' href='#'>取消</a>
+    </div>
+  </div>
+</div>
+   -->
+
+<button class='u-trigger' >show modal</button>
+
+<script src='modal.js'></script>
+<script>
+
+
+
+
+
+var modal = new Modal({
+  //  内容配置
+  content: "内容在此", //可传入节点和字符串
+  
+})
+
+
+modal.on('confirm', function(){
+  console.log('confirm');
+})
+
+
+
+document.querySelector('.u-trigger').addEventListener('click', function(){
+  modal.show('<h3>内容配置在此</h3>'); 
+  // 也可以设置modal.show(modal.content);
+})
+</script>
+</body>
+</html>
